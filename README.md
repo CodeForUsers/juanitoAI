@@ -61,5 +61,5 @@ Juanito es un bot de Telegram avanzado que utiliza modelos de IA locales (Ollama
 
 *   Creado por David Carreres Gómez.
 *   Fecha: 19/02/2026
-*   Versión: 1.0
+*   Versión: 1.0 (Prototipo)
 *   Licencia: GPL-3.0
