@@ -89,7 +89,7 @@ _(Ver la sección de Variables de Entorno)_.
 python Telegram_AI_bot.py
 ```
 
-### 5. Lanzamiento con Docker (Recomendado para VPS)
+### 5. Lanzamiento con Docker
 Si prefieres un despliegue limpio y autogestionado, Juanito incluye una configuración de `docker-compose`:
 ```bash
 # Iniciar el bot y una instancia local de Ollama en contenedores
