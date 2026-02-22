@@ -1,32 +1,32 @@
-# 🤖 JuanitoAI — Asistente de IA Multicanal y Modular
+# JuanitoAI — Asistente de IA Multicanal y Modular
 
 JuanitoAI es un asistente de Inteligencia Artificial ("bot") diseñado inicialmente para Telegram, pero refactorizado con una arquitectura core modular para permitir la futura integración con otros canales.
 
 El bot combina potentes modelos de lenguaje a través de Ollama, capacidades de visión, reconocimiento de voz usando Whisper, y generación de imágenes mediante modelos libres. Todo gestionado con una base de datos local (SQLite) para mantener el contexto, el humor y la memoria semántica a largo plazo de los usuarios.
 
-## 🌟 Características Principales
+## Características Principales
 
 Juanito está diseñado para ser **privado**, **local** y altamente personalizable:
 
-- **💬 Modelos LLM Locales / Cloud (Ollama):** Configura cualquier modelo de texto soportado por Ollama para el razonamiento principal.
-- **👁️ Visión Artificial:** Analiza fotos mediante un modelo de visión (como LLaVA) para interpretar imágenes y responder sobre ellas.
-- **🎤 Reconocimiento de Voz (Whisper):** Transcripción local de notas de voz. Si el audio es excesivamente largo (+1 minuto), genera un resumen ejecutivo automático.
-- **🧠 Memoria y Contexto Persistente:** Utiliza SQLite para el historial de la conversación. Incorpora un sistema de "humor" cambiante y una **memoria semántica** que extrae hechos biográficos del usuario en segundo plano para personalizar futuras respuestas.
-- **🎨 Generación de Imágenes Fotorealistas:** Genera imágenes directamente en la conversación apoyándose en la API de HuggingFace Inferencia (FLUX / SDXL).
-- **📝 Sistema de Notas y Recordatorios:** Herramientas de productividad para guardar apuntes (`/nota`) y programar avisos temporales asíncronos (`/remind`).
-- **🌐 Investigación Web Profunda:** Dos modos operativos: búsqueda rápida (`/search`) e investigación profunda (`/deepsearch`), donde un agente autónomo descarga webs enteras y extrae bibliografía real.
-- **📚 Soporte de Documentos:** Lee y contesta sobre archivos de texto planos (`.txt`, `.md`, `.csv`).
-- **🛡️ Seguridad y Rate Limiting:** Soporte integrado de "whitelists" de usuarios permitidos, límites de mensajes por minuto para evitar abusos, y roles de administrador.
+- **Modelos LLM Locales / Cloud (Ollama):** Configura cualquier modelo de texto soportado por Ollama para el razonamiento principal.
+- **Visión Artificial:** Analiza fotos mediante un modelo de visión (como LLaVA) para interpretar imágenes y responder sobre ellas.
+- **Reconocimiento de Voz (Whisper):** Transcripción local de notas de voz. Si el audio es excesivamente largo (+1 minuto), genera un resumen ejecutivo automático.
+- **Memoria y Contexto Persistente:** Utiliza SQLite para el historial de la conversación. Incorpora un sistema de "humor" cambiante y una **memoria semántica** que extrae hechos biográficos del usuario en segundo plano para personalizar futuras respuestas.
+- **Generación de Imágenes Fotorealistas:** Genera imágenes directamente en la conversación apoyándose en la API de HuggingFace Inferencia (FLUX / SDXL).
+- **Sistema de Notas y Recordatorios:** Herramientas de productividad para guardar apuntes (`/nota`) y programar avisos temporales asíncronos (`/remind`).
+- **Investigación Web Profunda:** Dos modos operativos: búsqueda rápida (`/search`) e investigación profunda (`/deepsearch`), donde un agente autónomo descarga webs enteras y extrae bibliografía real.
+- **Soporte de Documentos:** Lee y contesta sobre archivos de texto planos (`.txt`, `.md`, `.csv`).
+- **Seguridad y Rate Limiting:** Soporte integrado de "whitelists" de usuarios permitidos, límites de mensajes por minuto para evitar abusos, y roles de administrador.
 
 ---
 
-## 🏗️ Arquitectura (Fila Modular)
+## Arquitectura
 
-El proyecto separa de forma estricta la lógica agnóstica de los adaptadores específicos de cada red social.
+El proyecto separa de forma estricta la lógica de los adaptadores específicos de cada red social (actualmente solo Telegram).
 
 ```text
 juanitoAI/
-├── core/                           # 🧠 Lógica central (Agnóstica a plataformas)
+├── core/                           # Lógica central (Agnóstica a plataformas)
 │   ├── config.py                   # Variables de entorno y logging
 │   ├── database.py                 # Gestión SQLite (historial, notas, perfiles)
 │   ├── llm.py                      # Wrapper para Ollama AsyncClient
@@ -40,17 +40,17 @@ juanitoAI/
 │       ├── semantic_memory.py      # Extracción periódica de hechos de usuarios
 │       └── monitoring.py           # Stats del servidor (RAM, CPU, Disco)
 │
-├── channels/                       # 🔌 Adaptadores para canales de chat
+├── channels/                       # Adaptadores para canales de chat
 │   ├── telegram/                   # Cliente nativo de Telegram
 │   │   ├── handlers.py             # Controladores de comandos puros
 │   │   └── mapper.py               # Serializador de Telegram a core.Message
 │
-└── Telegram_AI_bot.py              # 🚀 Entrypoint principal y orquestador
+└── Telegram_AI_bot.py              # Entrypoint principal y orquestador
 ```
 
 ---
 
-## 🛠️ Instalación y Requisitos
+## Instalación y Requisitos
 
 Para correr Juanito, es recomendable usar un entorno virtual para evitar conflictos de dependencias.
 
@@ -71,12 +71,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-<<<<<<< Updated upstream
-*   Creado por David Carreres Gómez.
-*   Fecha: 19/02/2026
-*   Versión: 1.0 (Prototipo)
-*   Licencia: GPL-3.0
-=======
 ### 3. Configuración (`.env`)
 Antes de iniciar, debes preparar tus API keys. Copia el archivo de ejemplo:
 ```bash
@@ -93,7 +87,7 @@ python Telegram_AI_bot.py
 
 ---
 
-## ⚙️ Variables de Entorno (`.env`)
+## Variables de Entorno (`.env`)
 
 | Variable | Descripción | Ejemplo |
 |----------|-------------|---------|
@@ -109,7 +103,7 @@ python Telegram_AI_bot.py
 
 ---
 
-## 🤖 Comandos y Capacidades
+## Comandos y Capacidades
 
 ### Comandos Generales
 - `/start` - Despierta al bot y muestra el mensaje inicial literario.
@@ -131,8 +125,6 @@ python Telegram_AI_bot.py
 - **Extracción Biográfica (Memoria Semántica):** Juanito captura sentencias factuales sobre el interlocutor en _background_ cada cierto número de turnos. Este compendio se inyecta pasivamente en prompts futuros.
 - **Resumidor Transcriptor:** Audios que superen el límite sintáctico de tokens tras pasar por el pipe de Whisper son cortocircuitados hacia un sub-agente dedicado que esquematiza la información del audio, previniendo el desbordamiento conversacional.
 
-## 📝 Desarrollador
+## Desarrollador
 
 Creado y diseñado por **David Carreres Gómez**.
-Arquitectura Final y Refactor Modular completado en 2026.
->>>>>>> Stashed changes
