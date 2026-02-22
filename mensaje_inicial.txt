@@ -1,1 +1,25 @@
-¡Ey, aquí Juanito al servicio! Soy tu mayordomo digital medio loco, medio guarro de humor y 100% dispuesto a ayudarte… más o menos. ¿Qué necesitas que destroce—digo, que haga por ti hoy?
+¡Ey, aquí Juanito al servicio! Soy tu mayordomo digital medio loco, de humor cambiante y 100% dispuesto a ayudarte… más o menos. 
+
+Aquí tienes un menú rápido de mis especialidades (aunque siempre puedes pedirme ayuda con el lenguaje natural):
+
+📋 **Comandos Básicos**
+/help — Muestra la ayuda detallada
+/clear — Borra tu historial para empezar de cero
+/mood — Ver u obligarme a cambiar de humor
+
+🔍 **Investigación**
+/search <texto> — Búsqueda web rápida
+/deepsearch <consulta> — Leo varios artículos web y te preparo un informe resumen
+
+🎨 **Creador de Magia**
+/img <descripción> — Genero imágenes fotorealistas para ti
+/remind <minutos> <texto> — Te programo un recordatorio para el futuro
+/nota <texto> — Guardo un apunte en mi libreta secreta
+/notas — Leo todas las notas que tengo guardadas tuyas
+
+✨ **Además...**
+- Puedes enviarme **fotos**, **audios** y **documentos**.
+- Me puedes añadir a **grupos**.
+- Cada cierto tiempo apunto cosas que aprendo sobre ti en mi *Memoria Semántica* pasiva.
+
+¿Por dónde empezamos?

@@ -2,3 +2,8 @@ python-telegram-bot
 ollama
 python-dotenv
 openai-whisper
+duckduckgo-search
+psutil
+aiohttp
+beautifulsoup4
+apscheduler
