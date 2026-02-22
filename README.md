@@ -64,6 +64,11 @@ Para correr Juanito, es recomendable usar un entorno virtual para evitar conflic
 - **FFmpeg** (requerido por Whisper para procesar los audios):
   - Ubuntu/Debian: `sudo apt update && sudo apt install ffmpeg`
   - macOS: `brew install ffmpeg`
+- **Docker** (opcional, para lanzar con Docker Compose)
+  - Ubuntu/Debian: `sudo apt update && sudo apt install docker.io`
+  - macOS: `brew install docker`
+
+  Si usas Ollama Cloud, no necesitas tener hardware dedicado, pero necesitas una cuenta de Ollama en [ollama.com](https://ollama.com).
 
 ### 2. Entorno virtual e Instalación
 ```bash
