@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  juanito-bot:
+    build: .
+    container_name: juanito_bot
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    env_file:
+      - .env
+    environment:
+      # Sobrescribir la variable para que el bot apunte a la instancia local de Ollama en docker
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - bot_data:/app/data # Para persistir la DB y logs si se cambia DBP_PATH a /app/data
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: juanito_ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+
+volumes:
+  bot_data:
+  ollama_models:

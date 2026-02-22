@@ -2,6 +2,10 @@
 
 JuanitoAI es un asistente de Inteligencia Artificial ("bot") diseñado inicialmente para Telegram, pero refactorizado con una arquitectura core modular para permitir la futura integración con otros canales.
 
+<div align="center">
+  <img src="docs/img/imagen.jpg" alt="JuanitoAI Header" width="100%">
+</div>
+
 El bot combina potentes modelos de lenguaje a través de Ollama, capacidades de visión, reconocimiento de voz usando Whisper, y generación de imágenes mediante modelos libres. Todo gestionado con una base de datos local (SQLite) para mantener el contexto, el humor y la memoria semántica a largo plazo de los usuarios.
 
 ## Características Principales
@@ -79,10 +83,33 @@ nano .env
 ```
 _(Ver la sección de Variables de Entorno)_.
 
-### 4. Lanzamiento
+### 4. Lanzamiento (Local)
 ```bash
 # Iniciar el bot de forma normal dentro de una screen/tmux
 python Telegram_AI_bot.py
+```
+
+### 5. Lanzamiento con Docker (Recomendado para VPS)
+Si prefieres un despliegue limpio y autogestionado, Juanito incluye una configuración de `docker-compose`:
+```bash
+# Iniciar el bot y una instancia local de Ollama en contenedores
+docker-compose up -d
+```
+_Nota: Asegúrate de tener configurado tu `.env` antes de levantar los contenedores._
+
+---
+
+## Pruebas (Testing)
+
+El core del bot cuenta con una batería de pruebas unitarias usando `pytest` para garantizar la estabilidad de la persistencia de datos y manipulación de contexto.
+
+Para ejecutar los tests localmente:
+```bash
+# 1. Instalar dependencias de desarrollo
+pip install -r requirements-dev.txt
+
+# 2. Ejecutar Pytest
+pytest tests/
 ```
 
 ---
@@ -124,6 +151,10 @@ python Telegram_AI_bot.py
 ### Tareas en Segundo Plano (Sin comandos explícitos)
 - **Extracción Biográfica (Memoria Semántica):** Juanito captura sentencias factuales sobre el interlocutor en _background_ cada cierto número de turnos. Este compendio se inyecta pasivamente en prompts futuros.
 - **Resumidor Transcriptor:** Audios que superen el límite sintáctico de tokens tras pasar por el pipe de Whisper son cortocircuitados hacia un sub-agente dedicado que esquematiza la información del audio, previniendo el desbordamiento conversacional.
+
+## Video de demostración
+
+[![Ver Demo de Juanito AI](https://img.youtube.com/vi/QmIJVwPXUBw/0.jpg)](https://youtube.com/shorts/QmIJVwPXUBw)
 
 ## Desarrollador
 
